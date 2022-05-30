@@ -25,3 +25,9 @@ git config --global user.email "iuliandonici@gmail.com"
 git init
 # Add remote "busychrome" repository
 git remote add busychrome git@github.com:iuliandonici/busychrome.git
+# Add remote "neotestertheme" repository
+git remote add neotestertheme git@github.com:iuliandonici/neotestertheme.git
+# Clone the repositories: busychrome
+git clone git@github.com:iuliandonici/busychrome.git
+# Clone the repositories: neotestertheme
+git clone git@github.com:iuliandonici/neotestertheme.git
