@@ -22,7 +22,7 @@ sudo apt update && sudo apt install codium -y
 git config --global user.name "iuliandonici"
 git config --global user.email "iuliandonici@gmail.com"
 # Initiate a git repository
-git init
+# git init
 # Add remote "busychrome" repository
 git remote add busychrome git@github.com:iuliandonici/busychrome.git
 # Add remote "neotestertheme" repository
