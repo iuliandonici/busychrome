@@ -19,8 +19,8 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
 sudo apt update && sudo apt install codium -y
 
 # Configure Git
-git config --global user.name "iuliandonici"
-git config --global user.email "iuliandonici@gmail.com"
+git config --global user.name "yourGithubUsername"
+git config --global user.email "yourGithubAccountEmail@something.com"
 # Initiate a git repository
 # git init
 # Add remote "busychrome" repository
