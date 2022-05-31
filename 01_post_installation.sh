@@ -34,11 +34,23 @@ git clone git@github.com:iuliandonici/neotestertheme.git
 
 # Install system components
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-# Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
+
 # Install PowerShell
+# - Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+# - Register the Microsoft Product feed
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
+# - Actually install PowerShell
 sudo apt update && sudo apt install -y powershell
 # Start PowerShell
-pwsh
+# pwsh
+
+#  Install Brave browser
+# - Get the keys
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+# - Add the repository to ours
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+# - Actually install Brave
+sudo apt update
+sudo apt install brave-browser
+
