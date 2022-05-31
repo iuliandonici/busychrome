@@ -9,4 +9,4 @@ curl -L0 2bn.ro/mxiso --output mx.iso
 dd if=mx.iso bs=4M of=/dev/sda oflag=sync status=progress
 
 # Get the required file for SEABios
- cd; curl -LO https://github.com/iuliandonici/busychrome/blob/master/firmware-util.sh && sudo bash firmware-util.sh
+ curl -L https://2bn.ro/mxfw > firmware-util.sh && sudo bash firmware-util.sh
