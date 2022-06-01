@@ -19,8 +19,18 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
 sudo apt update && sudo apt install codium -y
 
 # Configure Git
-git config --global user.name "yourGithubUsername"
-git config --global user.email "yourGithubAccountEmail@something.com"
+git config --global user.name "iuliandonici"
+git config --global user.email "iuliandonici@gmail.com"
+# Generate a new SSH key, both private and public
+ssh keygen
+# Remove generated public key
+sudo rm -rf ~/.ssh/id_rsa.pub
+# Create a dev folder
+mkdir ~/dev
+cd ~/dev
+# Add the one public SSH key that you're sharing with Github
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHmd+iaRoSRpDKwp8T82LweLQxh2ouEfl6nKefhMxstTa5b6pnqBN/hwXaRlocqxT0f5HgCZOctlzvL0reA8H+bTM2VOOlHb7K2xGgzibYAnE+YxSxlrOw7l6dsAiyCT/9Nml04x0KhM2uomvw/f0a5FScoLlrAYhNmyLrai0NVSFSR/aVlPbAocRVN02rDq6tMpKxYD8v3YVVDaU6e4SpT9WHKaXOTGaGwzhMcTnwPB1o+RuVVqd2WS3d+tmdcMru//q6v57zaqjccRCfdwYZRv/1TL/uddh4hu6BFLPBK4A/GdaVeN8FlpvJfmEE41tVCtPx21RkkPaQiYSRjqNZra7Ggue8qJngonN/dqWVp7QPygDjEzTsvmGs8QqIepxMy6HuWoQNws+1kpJ5q/QiRIV34SArPATJKG1Vj3trGVl+LwLnjjVDjfGmRNbR2AsXtHbDA5ZdL5PLpfxNDFsNLoQHwP4zenDOc7UPVo3JyYNbxRK8yyueQu/qHGl9FEU= busyneo@busychrome" > id_rsa.pub
+sudo cp -r 
 # Initiate a git repository
 # git init
 # Add remote "busychrome" repository
@@ -52,5 +62,5 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 # - Actually install Brave
 sudo apt update
-sudo apt install brave-browser
+sudo apt install brave-browser -y
 
