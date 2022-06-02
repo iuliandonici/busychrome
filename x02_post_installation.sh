@@ -18,6 +18,17 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
 # - Finally, install VS Codium
 sudo apt update && sudo apt install codium -y
 
+# Add VS Codium to startup applications
+# - Create a dev folder
+mkdir ~/dev
+cd ~/dev
+# - Make a .desktop file
+echo -e "[Desktop Entry]\n Name=VSCodium_at_startup\n Type=Application\n Exec=/usr/share/codium/codium --unity-launch ~/dev \n Terminal=false" > test.desktop
+# - Copy it to the autostart folder
+sudo cp -r test.desktop /etc/xdg/autostart/VS_Codium_autostart.desktop
+# - Remove it from the local folder
+rm -rf test.desktop
+
 # Configure Git
 git config --global user.name "iuliandonici"
 git config --global user.email "iuliandonici@gmail.com"
@@ -25,9 +36,6 @@ git config --global user.email "iuliandonici@gmail.com"
 ssh-keygen
 # Remove generated public key
 sudo rm -rf ~/.ssh/id_rsa.pub
-# Create a dev folder
-mkdir ~/dev
-cd ~/dev
 # Add the one public SSH key that you're sharing with Github
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHmd+iaRoSRpDKwp8T82LweLQxh2ouEfl6nKefhMxstTa5b6pnqBN/hwXaRlocqxT0f5HgCZOctlzvL0reA8H+bTM2VOOlHb7K2xGgzibYAnE+YxSxlrOw7l6dsAiyCT/9Nml04x0KhM2uomvw/f0a5FScoLlrAYhNmyLrai0NVSFSR/aVlPbAocRVN02rDq6tMpKxYD8v3YVVDaU6e4SpT9WHKaXOTGaGwzhMcTnwPB1o+RuVVqd2WS3d+tmdcMru//q6v57zaqjccRCfdwYZRv/1TL/uddh4hu6BFLPBK4A/GdaVeN8FlpvJfmEE41tVCtPx21RkkPaQiYSRjqNZra7Ggue8qJngonN/dqWVp7QPygDjEzTsvmGs8QqIepxMy6HuWoQNws+1kpJ5q/QiRIV34SArPATJKG1Vj3trGVl+LwLnjjVDjfGmRNbR2AsXtHbDA5ZdL5PLpfxNDFsNLoQHwP4zenDOc7UPVo3JyYNbxRK8yyueQu/qHGl9FEU= busyneo@busychrome" > id_rsa.pub
 sudo cp -r id_rsa.pub ~/dev/
