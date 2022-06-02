@@ -23,7 +23,7 @@ sudo apt update && sudo apt install codium -y
 mkdir dev
 cd dev/
 # - Make a .desktop file
-echo -e "[Desktop Entry]\n Name=VSCodium_at_startup\n Type=Application\n Exec=/usr/share/codium/codium ~/dev \n Terminal=false" > test.desktop
+echo -e "[Desktop Entry]\n Name=VSCodium_at_startup\n Type=Application\n Exec=/usr/share/codium/codium dev/ \n Terminal=false" > test.desktop
 # - Copy it to the autostart folder
 sudo cp -r test.desktop /etc/xdg/autostart/VS_Codium_autostart.desktop
 # - Remove it from the local folder
