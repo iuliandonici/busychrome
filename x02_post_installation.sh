@@ -20,8 +20,8 @@ sudo apt update && sudo apt install codium -y
 
 # Add VS Codium to startup applications
 # - Create a dev folder
-mkdir ~/dev
-cd ~/dev
+mkdir dev
+cd dev/
 # - Make a .desktop file
 echo -e "[Desktop Entry]\n Name=VSCodium_at_startup\n Type=Application\n Exec=/usr/share/codium/codium ~/dev \n Terminal=false" > test.desktop
 # - Copy it to the autostart folder
@@ -38,7 +38,7 @@ ssh-keygen
 sudo rm -rf ~/.ssh/id_rsa.pub
 # Add the one public SSH key that you're sharing with Github
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHmd+iaRoSRpDKwp8T82LweLQxh2ouEfl6nKefhMxstTa5b6pnqBN/hwXaRlocqxT0f5HgCZOctlzvL0reA8H+bTM2VOOlHb7K2xGgzibYAnE+YxSxlrOw7l6dsAiyCT/9Nml04x0KhM2uomvw/f0a5FScoLlrAYhNmyLrai0NVSFSR/aVlPbAocRVN02rDq6tMpKxYD8v3YVVDaU6e4SpT9WHKaXOTGaGwzhMcTnwPB1o+RuVVqd2WS3d+tmdcMru//q6v57zaqjccRCfdwYZRv/1TL/uddh4hu6BFLPBK4A/GdaVeN8FlpvJfmEE41tVCtPx21RkkPaQiYSRjqNZra7Ggue8qJngonN/dqWVp7QPygDjEzTsvmGs8QqIepxMy6HuWoQNws+1kpJ5q/QiRIV34SArPATJKG1Vj3trGVl+LwLnjjVDjfGmRNbR2AsXtHbDA5ZdL5PLpfxNDFsNLoQHwP4zenDOc7UPVo3JyYNbxRK8yyueQu/qHGl9FEU= busyneo@busychrome" > id_rsa.pub
-sudo cp -r id_rsa.pub ~/dev/
+sudo cp -r id_rsa.pub ~/.ssh/id_rsa.pub
 # Initiate a git repository
 # git init
 # Add remote "busychrome" repository
@@ -46,9 +46,9 @@ git remote add busychrome git@github.com:iuliandonici/busychrome.git
 # Add remote "neotestertheme" repository
 git remote add neotestertheme git@github.com:iuliandonici/neotestertheme.git
 # Clone the repositories: busychrome
-git clone git@github.com:iuliandonici/busychrome.git
+git clone https://github.com/iuliandonici/busychrome.git
 # Clone the repositories: neotestertheme
-git clone git@github.com:iuliandonici/neotestertheme.git
+git clone https://github.com/iuliandonici/neotestertheme.git
 
 # Install system components
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
