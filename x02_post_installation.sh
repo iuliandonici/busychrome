@@ -22,7 +22,7 @@ sudo apt update && sudo apt install codium -y
 git config --global user.name "iuliandonici"
 git config --global user.email "iuliandonici@gmail.com"
 # Generate a new SSH key, both private and public
-ssh keygen
+ssh-keygen
 # Remove generated public key
 sudo rm -rf ~/.ssh/id_rsa.pub
 # Create a dev folder
