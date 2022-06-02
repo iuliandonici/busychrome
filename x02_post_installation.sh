@@ -40,15 +40,17 @@ sudo rm -rf ~/.ssh/id_rsa.pub
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHmd+iaRoSRpDKwp8T82LweLQxh2ouEfl6nKefhMxstTa5b6pnqBN/hwXaRlocqxT0f5HgCZOctlzvL0reA8H+bTM2VOOlHb7K2xGgzibYAnE+YxSxlrOw7l6dsAiyCT/9Nml04x0KhM2uomvw/f0a5FScoLlrAYhNmyLrai0NVSFSR/aVlPbAocRVN02rDq6tMpKxYD8v3YVVDaU6e4SpT9WHKaXOTGaGwzhMcTnwPB1o+RuVVqd2WS3d+tmdcMru//q6v57zaqjccRCfdwYZRv/1TL/uddh4hu6BFLPBK4A/GdaVeN8FlpvJfmEE41tVCtPx21RkkPaQiYSRjqNZra7Ggue8qJngonN/dqWVp7QPygDjEzTsvmGs8QqIepxMy6HuWoQNws+1kpJ5q/QiRIV34SArPATJKG1Vj3trGVl+LwLnjjVDjfGmRNbR2AsXtHbDA5ZdL5PLpfxNDFsNLoQHwP4zenDOc7UPVo3JyYNbxRK8yyueQu/qHGl9FEU= busyneo@busychrome" > id_rsa.pub
 sudo cp -r id_rsa.pub ~/.ssh/id_rsa.pub
 # Initiate a git repository
-# git init
+#git init
+# - Clone the repositories: busychrome
+git clone https://github.com/iuliandonici/busychrome.git
+# - Clone the repositories: neotestertheme
+git clone https://github.com/iuliandonici/neotestertheme.git
 # Add remote "busychrome" repository
 git remote add busychrome git@github.com:iuliandonici/busychrome.git
-# Add remote "neotestertheme" repository
+# - Add remote "neotestertheme" repository
 git remote add neotestertheme git@github.com:iuliandonici/neotestertheme.git
-# Clone the repositories: busychrome
-git clone https://github.com/iuliandonici/busychrome.git
-# Clone the repositories: neotestertheme
-git clone https://github.com/iuliandonici/neotestertheme.git
+# - Remove local public SSH key
+rm -rf id_rsa.pub
 
 # Install system components
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
