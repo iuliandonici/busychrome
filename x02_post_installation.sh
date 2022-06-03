@@ -42,15 +42,13 @@ cp -r id_rsa.pub ~/.ssh/
 # Initiate a git repository
 git init
 # - Clone the repositories: busychrome
-git clone git@github.com:iuliandonici/busychrome.git
+git clone https://github.com/iuliandonici/busychrome.git
 # - Clone the repositories: neotestertheme
-git clone git@github.com:iuliandonici/neotestertheme.git
+git clone https://github.com/iuliandonici/neotestertheme.git
 # Add remote "busychrome" repository
 git remote add busychrome git@github.com:iuliandonici/busychrome.git
 # - Add remote "neotestertheme" repository
 git remote add neotestertheme git@github.com:iuliandonici/neotestertheme.git
-# - Remove local public SSH key
-rm -rf id_rsa.pub
 
 # Install system components
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
@@ -74,3 +72,5 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update
 sudo apt install brave-browser -y
 
+sudo apt-get update 
+sudo apt-get upgrade -y
