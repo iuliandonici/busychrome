@@ -1,6 +1,9 @@
 #!/bin/bash
 # Things to do after an MX Linux installation
 
+# Generate a new SSH key, both private and public
+ssh-keygen
+
 # Update and upgrade
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -29,19 +32,6 @@ sudo cp -r test.desktop /etc/xdg/autostart/VS_Codium_autostart.desktop
 # - Remove it from the local folder
 rm -rf test.desktop
 
-# Configure Git
-git config --global user.name "iuliandonici"
-git config --global user.email "iuliandonici@gmail.com"
-# Generate a new SSH key, both private and public
-ssh-keygen
-# Remove generated public key
-sudo rm -rf ~/.ssh/id_rsa.pub
-# Add the one public SSH key that you're sharing with Github
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjDQNLdJA6smnaFWsA/emI2U56klErgKaPvX2rq5HbE9oogl/3u4qbZts6vdmXJel3oxidGLqWIV9V0LIYW+QC5JFHCdzt//2pp0k2QWE2RaL6xReR1PDkrSGikcKax2Xp73Ej1DcdQpwGhhLfAGs4JNvB5/D/IVK2Lcssg5+qajGouaBC6QZ3xDmZZaYyOAmLb+wpNmqyaW/YwreAXZ8c77rdC+g1MLnWOnJoNcAe0//YQ/b3MIlkuGiRaviT/C8i2Y2wBCZKjU3oMiAx+q0uG3NEk1YeyZtMtywHR+iWlpEMJohJBcxhc+Ne6AJJzI4dZHoxLpJReGg8Sv+7xCX9eDLCDTodIU/SVXrBMoedcJn9NcJKLY3ABJIOW6vnLRqTuBiw5Vw1t3U3o07r2/ggltdxoxHcejdvz/ORmX/VbbsGGIHhyct8EG/kYUhuYv/cS1ckDyN8asYfcP8qy87Qox1zgoAWcLEJocubhGVs+O1oNGPHxQLj9KMcZMqf/wk= busyneo@busychrome" >id_rsa.pub
-cp -r id_rsa.pub ~/.ssh/
-# Initiate a git repository
-
-
 # Install system components
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
 
@@ -64,5 +54,6 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update
 sudo apt install brave-browser -y
 
+# Update everything again
 sudo apt-get update 
 sudo apt-get upgrade -y
