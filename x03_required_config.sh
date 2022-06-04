@@ -15,3 +15,13 @@ git remote add busychrome git@github.com:iuliandonici/busychrome.git
 # - Add remote "neotestertheme" repository
 git remote add neotestertheme git@github.com:iuliandonici/neotestertheme.git
 
+# Add VS Codium to startup applications
+# - Create a dev folder
+mkdir dev
+cd dev/
+# - Make a .desktop file
+echo -e "[Desktop Entry]\n Name=VSCodium_at_startup\n Type=Application\n Exec=/usr/share/codium/codium dev/ \n Terminal=false" > test.desktop
+# - Copy it to the autostart folder
+sudo cp -r test.desktop /etc/xdg/autostart/VS_Codium_autostart.desktop
+# - Remove it from the local folder
+rm -rf test.desktop
