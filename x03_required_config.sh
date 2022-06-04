@@ -15,7 +15,7 @@ git clone git@github.com:iuliandonici/busychrome.git
 # - Clone the repositories: neotestertheme
 git clone git@github.com:iuliandonici/neotestertheme.git
 # Add remote "busychrome" repository
-git remote add busychrome git@github.com:iuliandonici/busychrome.git
+git remote add busygit gitchrome git@github.com:iuliandonici/busychrome.git
 # - Add remote "neotestertheme" repository
 git remote add neotestertheme git@github.com:iuliandonici/neotestertheme.git
 
